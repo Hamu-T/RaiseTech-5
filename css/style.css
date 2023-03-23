@@ -120,10 +120,12 @@ ul {
   }
 }
 .header .sub-menu {
+  opacity: 0;
+  visibility: hidden;
   position: absolute;
   transform: scaleY(0); /* 滑らかに表示する */
   transform-origin: center top; /* 上から出てくる */
-  transition: all 0.2s;
+  transition: transform 0.2s;
 }
 @media screen and (max-width: 1200px) {
   .header .sub-menu {
@@ -142,6 +144,7 @@ ul {
   }
 }
 .header .sub-menu :hover {
+  visibility: visible;
   background-color: #fff;
   color: #63a7b9;
 }
@@ -153,6 +156,8 @@ ul {
 }
 .header .menu:hover .sub-menu {
   visibility: visible;
+  opacity: 1;
+  transition: transform 0.2s;
   transform: scaleY(1); /* 滑らかに表示する */
   background-color: #E9F8FB;
 }
