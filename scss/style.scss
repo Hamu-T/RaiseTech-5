@@ -54,6 +54,7 @@ ul {
             img { /* RaiseTech-ロゴ調整 */
                 height: 32px;
                 margin-left: 20px;
+
                 @media screen and (max-width: 1200px) {
                     height: 30px;
                     margin-left: 10px;
@@ -75,6 +76,7 @@ ul {
     &-nav {/* navを横並びにする */
         display: flex;
         font-size: 16px;
+
         @media screen and (max-width: 1200px) {
             flex-direction: column;
             width: 100%;/* navを横いっぱいに広げる */
@@ -123,6 +125,7 @@ ul {
         transform: scaleY(0);/* 滑らかに表示する */
         transform-origin: center top;/* 上から出てくる */
         transition: transform 0.2s;
+
         @media screen and (max-width: 1200px) {
             width: 1500px;
             font-weight: 400;
@@ -131,6 +134,7 @@ ul {
         a {
             padding: 20px 50px 20px 20px;
             height: auto;
+            
             @media screen and (max-width: 1200px) {
                 padding: 15px 15px 15px 20px;
             }
@@ -445,7 +449,7 @@ ul {
     }
 }
 
-@media screen and(max-width: 1200px) {
+@media screen and (max-width: 1200px) {
     .menu:hover {
         .sub-menu {
             transform: rotateY(1);
