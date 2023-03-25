@@ -154,7 +154,7 @@ ul {
     .menu:hover .sub-menu {
         visibility: visible;
         opacity: 1;
-        transition: transform 0.2s;
+        transition: transform 2s;
         transform: scaleY(1);/* 滑らかに表示する */
         background-color: #E9F8FB;
 
