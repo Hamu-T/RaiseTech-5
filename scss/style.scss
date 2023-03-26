@@ -9,8 +9,7 @@ html {
     font-size: 100%;
 }
 body {
-    font-family: "Noto Sans JP", MyYuGothicM, YuGothic, -apple-system, BlinkMacSystemFont, "Hiragino kaku Gothic ProN", Meiryo, Verdana, arial, helvetica, sans-serif;
-    line-height: 1.2;
+    font-family: "Noto Sans JP", MyYuGothicM, YuGothic, -apple-system, BlinkMacSystemFont, "Hiragino kaku Gothic ProN", Meiryo, Verdana, arial, helvetica, sans-serif;    line-height: 1.2;
     font-weight: 700;
 }
 a {
@@ -51,6 +50,7 @@ ul {
         &-logo {
             display: flex;
             align-items: center;
+            font-weight: bold;
             img { /* RaiseTech-ロゴ調整 */
                 height: 32px;
                 margin-left: 20px;
@@ -76,14 +76,19 @@ ul {
     &-nav {/* navを横並びにする */
         display: flex;
         font-size: 16px;
-
+    &-nav > li {
+        position: relative;
+    }
+    &-nav a {
+        display: block;
+    }
         @media screen and (max-width: 1200px) {
             flex-direction: column;
             width: 100%;/* navを横いっぱいに広げる */
             background-color: #fff;
             transform: scaleY(0);
-            transform-origin: center top;
-            transition: all 0.2s;
+        //     transform-origin: center top;
+        //     transition: all 0.2s;
         }
         .list-item-7 {/*「お申し込み」を調整 */
             margin: 0;
@@ -101,13 +106,14 @@ ul {
     }
 
     .menu {
+        // display: flex;
         a {/* navのクリック範囲を広げる */
             display: block;
             padding: 25px 15px;
-            transition: all 0.3s;
+            // transition: all 0.3s;
 
             @media screen and (max-width: 1200px) {
-                padding: 15px;
+                padding: 10px;
             }
         }
         :hover {
@@ -119,17 +125,21 @@ ul {
         }
     }
     .sub-menu {
-        opacity: 0;
-        visibility: hidden;
+        // opacity: 0;
+        // visibility: hidden;
+        display: none;
         position: absolute;
-        transform: scaleY(0);/* 滑らかに表示する */
-        transform-origin: center top;/* 上から出てくる */
-        transition: transform 0.2s;
+        // transform: scaleY(0);/* 滑らかに表示する */
+        // transform-origin: center top;/* 上から出てくる */
+        // transition: transform 0.2s;
+        li {
+            font-weight: normal;
+        }
 
         @media screen and (max-width: 1200px) {
             width: 1500px;
             font-weight: 400;
-            visibility: hidden;
+            // visibility: hidden;
         }
         a {
             padding: 20px 50px 20px 20px;
@@ -140,9 +150,11 @@ ul {
             }
         }
         :hover {
-            visibility: visible;
+            // visibility: visible;
+            // display: block;
             background-color: #fff;
             color: #63a7b9;
+            transition: all 0.2s;// <- サブメニューホバー アニメーション
 
             @media screen and (max-width: 1200px) {
                 background-color: #F3FAFB;
@@ -152,16 +164,17 @@ ul {
     }
 
     .menu:hover .sub-menu {
-        visibility: visible;
-        opacity: 1;
-        transition: transform 2s;
-        transform: scaleY(1);/* 滑らかに表示する */
+        // visibility: visible;
+        display: block;
+        // opacity: 1;
+        // transition: transform 2s;
+        // transform: scaleY(1);/* 滑らかに表示する */
         background-color: #E9F8FB;
 
         @media screen and (max-width: 1200px) {
             background-color: #fff;
             color: #000;
-            position: static;/* 下のメニューがサブメニューで隠れないようにする */
+            position: static;/* 下のメニューがサブメニューに隠れないようにする */
         }
     }
     
@@ -245,8 +258,10 @@ ul {
             font-size: 18px;
             width: 290px;
             margin: 30px 15px 0 15px;
+            transition: 0.4s;
 
             @media screen and (max-width: 767px) {
+                transform: scale(0.9);
                 width: 250px;
                 font-size: 16px;
                 margin: 15px;
@@ -400,12 +415,12 @@ ul {
         &.menu-open {
             background-color: #2498B3;
             &::before {
-                transform: rotate( 45deg );
+                transform: rotate( -45deg );
                 top: 50%;
                 background-color: #fff;
             }
             &::after {
-                transform: rotate( -45deg );
+                transform: rotate( -135deg );
                 top: 50%;
                 background-color: #fff;
             }

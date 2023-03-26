@@ -50,6 +50,7 @@ ul {
 .header-title-logo {
   display: flex;
   align-items: center;
+  font-weight: bold;
 }
 .header-title-logo img { /* RaiseTech-ロゴ調整 */
   height: 32px;
@@ -77,14 +78,18 @@ ul {
   display: flex;
   font-size: 16px;
 }
+.header-nav-nav > li {
+  position: relative;
+}
+.header-nav-nav a {
+  display: block;
+}
 @media screen and (max-width: 1200px) {
   .header-nav {
     flex-direction: column;
     width: 100%; /* navを横いっぱいに広げる */
     background-color: #fff;
     transform: scaleY(0);
-    transform-origin: center top;
-    transition: all 0.2s;
   }
 }
 .header-nav .list-item-7 { /*「お申し込み」を調整 */
@@ -104,11 +109,10 @@ ul {
 .header .menu a { /* navのクリック範囲を広げる */
   display: block;
   padding: 25px 15px;
-  transition: all 0.3s;
 }
 @media screen and (max-width: 1200px) {
   .header .menu a {
-    padding: 15px;
+    padding: 10px;
   }
 }
 .header .menu :hover {
@@ -120,18 +124,16 @@ ul {
   }
 }
 .header .sub-menu {
-  opacity: 0;
-  visibility: hidden;
+  display: none;
   position: absolute;
-  transform: scaleY(0); /* 滑らかに表示する */
-  transform-origin: center top; /* 上から出てくる */
-  transition: transform 0.2s;
+}
+.header .sub-menu li {
+  font-weight: normal;
 }
 @media screen and (max-width: 1200px) {
   .header .sub-menu {
     width: 1500px;
     font-weight: 400;
-    visibility: hidden;
   }
 }
 .header .sub-menu a {
@@ -144,9 +146,9 @@ ul {
   }
 }
 .header .sub-menu :hover {
-  visibility: visible;
   background-color: #fff;
   color: #63a7b9;
+  transition: all 0.2s;
 }
 @media screen and (max-width: 1200px) {
   .header .sub-menu :hover {
@@ -155,17 +157,14 @@ ul {
   }
 }
 .header .menu:hover .sub-menu {
-  visibility: visible;
-  opacity: 1;
-  transition: transform 2s;
-  transform: scaleY(1); /* 滑らかに表示する */
+  display: block;
   background-color: #E9F8FB;
 }
 @media screen and (max-width: 1200px) {
   .header .menu:hover .sub-menu {
     background-color: #fff;
     color: #000;
-    position: static; /* 下のメニューがサブメニューで隠れないようにする */
+    position: static; /* 下のメニューがサブメニューに隠れないようにする */
   }
 }
 
@@ -252,9 +251,11 @@ ul {
   font-size: 18px;
   width: 290px;
   margin: 30px 15px 0 15px;
+  transition: 0.4s;
 }
 @media screen and (max-width: 767px) {
   .top-head-body .btn {
+    transform: scale(0.9);
     width: 250px;
     font-size: 16px;
     margin: 15px;
@@ -405,12 +406,12 @@ ul {
     background-color: #2498B3;
   }
   .p-hamburger.menu-open::before {
-    transform: rotate(45deg);
+    transform: rotate(-45deg);
     top: 50%;
     background-color: #fff;
   }
   .p-hamburger.menu-open::after {
-    transform: rotate(-45deg);
+    transform: rotate(-135deg);
     top: 50%;
     background-color: #fff;
   }
