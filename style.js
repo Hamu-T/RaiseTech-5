@@ -16,6 +16,22 @@ document. querySelector('.header-nav').classList.toggle ('menu-open');
 
 $(function() {
     $(".menu").hover(function() {
-        $(this).chidlren(".sub-menu").stop().slideToggle();
+        $(this).chidlren(".sub-menu").stop().slideToggle(2000);
+        
+        var elementHeight = $('.sub-menu').height();
+        console.log(elementHeight);
+        // 👆Uncaught TypeError: $(...).chidlren is not a function
+        // 👆Uncaught TypeError: $(...).chidlren は関数ではありません。
     });
 });
+
+
+// chatGPT 「 css: .sub-menu{display:none;} 」<- 付けてアニメーションする(出来なかった)
+
+// $(function() {
+//     $(".menu").hover(function() {
+//         $(this).siblings(".sub-menu").stop().slideDown(2000);
+//     }, function() {
+//         $(this).siblings(".sub-menu").stop().slideUp(2000);
+//     });
+// });
