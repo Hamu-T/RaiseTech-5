@@ -16,7 +16,7 @@ document. querySelector('.header-nav').classList.toggle ('menu-open');
 
 $(function() {
     $(".menu").hover(function() {
-        $(this).chidlren(".sub-menu").stop().slideToggle(2000);
+        $(this).children(".sub-menu").stop().slideToggle(200);
         
         var elementHeight = $('.sub-menu').height();
         console.log(elementHeight);
