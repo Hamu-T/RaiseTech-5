@@ -87,8 +87,6 @@ ul {
             width: 100%;/* navを横いっぱいに広げる */
             background-color: #fff;
             transform: scaleY(0);
-        //     transform-origin: center top;
-        //     transition: all 0.2s;
         }
         .list-item-7 {/*「お申し込み」を調整 */
             margin: 0;
@@ -108,9 +106,9 @@ ul {
     .menu {
         // display: flex;
         a {/* navのクリック範囲を広げる */
+            line-height: 1.3;// headerとの僅かな高さを調整
             display: block;
             padding: 25px 15px;
-            // transition: all 0.3s;
 
             @media screen and (max-width: 1200px) {
                 padding: 10px;
@@ -125,13 +123,9 @@ ul {
         }
     }
     .sub-menu {
-        // opacity: 0;
-        // visibility: hidden;
-        display: none;
+        visibility: hidden;// サブメニュー非表示
+        display: none;// サブメニューボックスごと非表示
         position: absolute;
-        // transform: scaleY(0);/* 滑らかに表示する */
-        // transform-origin: center top;/* 上から出てくる */
-        // transition: transform 0.2s;
         li {
             font-weight: normal;
         }
@@ -139,7 +133,6 @@ ul {
         @media screen and (max-width: 1200px) {
             width: 1500px;
             font-weight: 400;
-            // visibility: hidden;
         }
         a {
             padding: 20px 50px 20px 20px;
@@ -150,8 +143,6 @@ ul {
             }
         }
         :hover {
-            // visibility: visible;
-            // display: block;
             background-color: #fff;
             color: #63a7b9;
             transition: all 0.2s;// <- サブメニューホバー アニメーション
@@ -164,17 +155,13 @@ ul {
     }
 
     .menu:hover .sub-menu {
-        // visibility: visible;
-        display: block;
-        // opacity: 1;
-        // transition: transform 2s;
-        // transform: scaleY(1);/* 滑らかに表示する */
+        visibility: visible;// サブメニュー表示
         background-color: #E9F8FB;
 
         @media screen and (max-width: 1200px) {
             background-color: #fff;
             color: #000;
-            position: static;/* 下のメニューがサブメニューに隠れないようにする */
+            position: static;// 下のメニューがサブメニューに隠れないようにする
         }
     }
     
@@ -308,7 +295,7 @@ ul {
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-top: -280px;
+            margin-top: -310px;
             color: #fff;
 
             @media screen and (max-width: 767px) {
@@ -359,9 +346,6 @@ ul {
                     height: 50px;
                     margin-top: 10px;
                     line-height:1.6;
-
-                    @media screen and (max-width: 767px) {
-                    }
                 }
             }
         }
