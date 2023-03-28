@@ -1,29 +1,4 @@
 @charset "UTF-8";
-html {
-  margin: 0;
-  padding: 0;
-  font-size: 100%;
-}
-
-body {
-  font-family: "Noto Sans JP", MyYuGothicM, YuGothic, -apple-system, BlinkMacSystemFont, "Hiragino kaku Gothic ProN", Meiryo, Verdana, arial, helvetica, sans-serif;
-  line-height: 1.2;
-  font-weight: 700;
-}
-
-a {
-  text-decoration: none;
-  color: #000;
-}
-
-img {
-  max-width: 100%;
-}
-
-ul {
-  list-style: none;
-}
-
 /*  header
 -----------------------------------------*/
 .header {
@@ -78,18 +53,12 @@ ul {
   display: flex;
   font-size: 16px;
 }
-.header-nav-nav > li {
-  position: relative;
-}
-.header-nav-nav a {
-  display: block;
-}
 @media screen and (max-width: 1200px) {
   .header-nav {
     flex-direction: column;
     width: 100%; /* navを横いっぱいに広げる */
     background-color: #fff;
-    transform: scaleY(0);
+    visibility: hidden;
   }
 }
 .header-nav .list-item-7 { /*「お申し込み」を調整 */
@@ -166,7 +135,7 @@ ul {
   .header .menu:hover .sub-menu {
     background-color: #fff;
     color: #000;
-    position: static;
+    position: relative;
   }
 }
 
@@ -407,6 +376,7 @@ ul {
   }
   .p-hamburger.menu-open {
     background-color: #2498B3;
+    transition: background-color 0.8s;
   }
   .p-hamburger.menu-open::before {
     transform: rotate(-45deg);
@@ -424,7 +394,8 @@ ul {
 }
 
 .header-nav.menu-open {
-  transform: scaleY(1);
+  visibility: visible;
+  transition: all 0.8s;
 }
 
 .menu-bar {
@@ -461,5 +432,29 @@ ul {
   .menu:hover .sub-menu-plus::before {
     background: none;
   }
+}
+html {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+}
+
+body {
+  font-family: "Noto Sans JP", MyYuGothicM, YuGothic, -apple-system, BlinkMacSystemFont, "Hiragino kaku Gothic ProN", Meiryo, Verdana, arial, helvetica, sans-serif;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+img {
+  max-width: 100%;
+}
+
+ul {
+  list-style: none;
 }
 /*# sourceMappingURL=style.css.map */

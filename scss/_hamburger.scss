@@ -1,0 +1,115 @@
+@use "sass:math";
+
+$btnWidth: 25px;
+$btnHeight: 2px;
+
+
+/* ハンバーガーメニュー
+--------------------------------------------*/
+
+.p-hamburger {/* ボタン全体の設定 */
+    display: none;
+
+    @media screen and (max-width: 1200px) {
+        position: relative;
+        display: block;
+        width: 50px;
+        height: 50px;
+        background-color: #fff;
+        &::before,
+        &::after {/* 上下線の設定 */
+            position: absolute;
+            display: block;
+            content: "";
+            width: $btnWidth;
+            height: $btnHeight;
+            background: #2CBBD9;
+            left: calc( 50% - math.div( #{$btnWidth}, 2 ) );
+            transition: transform 0.3s;
+        }
+        &::before {/* 上線の位置 */
+            top: 15px;
+        }
+        &::after {/* 下線の位置 */
+            top: 35px;
+        }
+        > span {/* 中央線の設定 */
+            position: absolute;
+            width: $btnWidth;
+            height: $btnHeight;
+            font-size: 0;
+            background: linear-gradient( to right, #2CBBD9, #2CBBD9 ) repeat-x #2CBBD9;
+            background-size: auto $btnHeight;
+            left: calc( 50% - math.div( #{$btnWidth}, 2 ) );
+            top: 50%;
+            transition: transform 0.3s;
+        }
+        /* JavaScriptで「 menu-open 」classを追加
+        メニューボタンをクリックした時の動作　*/
+        &.menu-open {
+            background-color: #2498B3;
+            transition: background-color 0.8s;
+            // transform-origin: center top;
+            // transition: all 0.8s;
+            &::before {
+                transform: rotate( -45deg );
+                top: 50%;
+                background-color: #fff;
+            }
+            &::after {
+                transform: rotate( -135deg );
+                top: 50%;
+                background-color: #fff;
+            }
+            > span {
+                background: none;
+            }
+        }
+    }
+}
+.header-nav {
+    &.menu-open {
+        // transform: scaleY(1);
+        visibility: visible;
+        transition: all 0.8s;
+    }
+}
+.menu-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .sub-menu-plus {
+
+        @media screen and (max-width: 1200px) {
+            position: relative;
+            display: block;
+            width: 50px;
+            height: 50px;
+            &::before,
+            &::after {/* 上下線の設定 */
+                position: absolute;
+                display: block;
+                content: "";
+                width: $btnWidth;
+                height: $btnHeight;
+                top: 50%;
+                left: calc( 50% - math.div( #{$btnWidth}, 2 ) );
+                background-color: #121212;
+            }
+            &::before {/* 上線の位置 */
+                transform:  rotate(90deg);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .menu:hover {
+        .sub-menu {
+            transform: rotateY(1);
+        }
+        .sub-menu-plus::before {
+            background: none;
+        }
+    }
+}
