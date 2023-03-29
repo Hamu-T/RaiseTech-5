@@ -9,6 +9,7 @@ $btnHeight: 2px;
 
 .p-hamburger {/* ボタン全体の設定 */
     display: none;
+    z-index: 1;
 
     @media screen and (max-width: 1200px) {
         position: relative;
@@ -49,8 +50,6 @@ $btnHeight: 2px;
         &.menu-open {
             background-color: #2498B3;
             transition: background-color 0.8s;
-            // transform-origin: center top;
-            // transition: all 0.8s;
             &::before {
                 transform: rotate( -45deg );
                 top: 50%;
@@ -68,10 +67,28 @@ $btnHeight: 2px;
     }
 }
 .header-nav {
+    @media screen and(max-width:1200px) {
+        // opacity: 0;// ゆっくり表示されるが上から出てこない
+        // transform: rotateY(0);//アニメーションしない
+        transform: translateY(-100%);// 上から表示されるがheaderの上を通過してしまう
+
+        // --- chatGPT --- //
+        // position: fixed;
+        // top: -100%;
+    }
     &.menu-open {
+        // opacity: 1;
+        // transform: rotateY(1);
+        transform: translateX(0);
         // transform: scaleY(1);
+        
+        z-index: 0;
         visibility: visible;
         transition: all 0.8s;
+
+        // --- chatGPT --- //
+        // top: 0;
+    
     }
 }
 .menu-bar {
