@@ -336,6 +336,7 @@
 --------------------------------------------*/
 .p-hamburger { /* ボタン全体の設定 */
   display: none;
+  z-index: 1;
 }
 @media screen and (max-width: 1200px) {
   .p-hamburger {
@@ -393,7 +394,14 @@
   }
 }
 
+@media screen and (max-width: 1200px) {
+  .header-nav {
+    transform: translateY(-100%);
+  }
+}
 .header-nav.menu-open {
+  transform: translateX(0);
+  z-index: 0;
   visibility: visible;
   transition: all 0.8s;
 }

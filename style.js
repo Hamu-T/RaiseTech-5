@@ -7,9 +7,6 @@ document. querySelector('.js-hamburger').classList.toggle ('menu-open');
 document. querySelector ('.p-gmenu').classList.toggle('menu-open');
 document. querySelector ('body').classList.toggle('menu-open');
 document. querySelector('.header-nav').classList.toggle ('menu-open');
-
-let btnClick = $('.header-nav').height();
-console.log(btnClick);
 }
 );
 
