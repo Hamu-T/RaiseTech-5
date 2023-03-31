@@ -8,7 +8,6 @@ $btnHeight: 2px;
 --------------------------------------------*/
 
 .p-hamburger {/* ボタン全体の設定 */
-    display: none;
     z-index: 1;
 
     @media screen and (max-width: 1200px) {
@@ -68,27 +67,15 @@ $btnHeight: 2px;
 }
 .header-nav {
     @media screen and(max-width:1200px) {
-        // opacity: 0;// ゆっくり表示されるが上から出てこない
-        // transform: rotateY(0);//アニメーションしない
-        transform: translateY(-100%);// 上から表示されるがheaderの上を通過してしまう
-
-        // --- chatGPT --- //
-        // position: fixed;
-        // top: -100%;
+        position: fixed;
+        visibility: hidden;
+        top: -100%;
+        transition: all 0.3s;
     }
-    &.menu-open {
-        // opacity: 1;
-        // transform: rotateY(1);
-        transform: translateX(0);
-        // transform: scaleY(1);
-        
-        z-index: 0;
+    &.menu-open {// メニューボタンで上から現れる
         visibility: visible;
-        transition: all 0.8s;
-
-        // --- chatGPT --- //
-        // top: 0;
-    
+        top: 50px;
+        overflow: hidden;
     }
 }
 .menu-bar {
