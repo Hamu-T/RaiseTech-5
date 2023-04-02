@@ -85,6 +85,7 @@
         }
         :hover {
             background-color: #D4F1F8;
+            transition: all 0.5s;
 
             @media screen and (max-width: 1200px) {
             background-color: #F3FAFB;
@@ -114,7 +115,7 @@
         :hover {
             background-color: #fff;
             color: #63a7b9;
-            transition: all 0.2s;// <- サブメニューホバー アニメーション
+            transition: all 0.3s;// <- サブメニューホバー アニメーション
 
             @media screen and (max-width: 1200px) {
                 background-color: #F3FAFB;

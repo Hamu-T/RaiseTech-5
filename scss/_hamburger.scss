@@ -64,18 +64,18 @@ $btnHeight: 2px;
             }
         }
     }
+    
 }
 .header-nav {
     @media screen and(max-width:1200px) {
-        position: fixed;
-        visibility: hidden;
-        top: -100%;
-        transition: all 0.3s;
+        overflow: hidden;// メニューを隠し、ホバーできないようにする
+        max-height: 0;// メニューを隠せるがホバーできてしまう
+        transition: max-height 0.3s ease-out;// 高さが０になるまでの時間
     }
     &.menu-open {// メニューボタンで上から現れる
-        visibility: visible;
-        top: 50px;
-        overflow: hidden;
+        max-height: 700px;// メニューを上から不透明にする
+        transition: max-height 0.3s ease-in;// 高さがmaxになるまでの時間
+
     }
 }
 .menu-bar {
