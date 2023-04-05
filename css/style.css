@@ -398,14 +398,8 @@
 
 @media screen and (max-width: 1200px) {
   .header-nav {
-    overflow: hidden;
-    max-height: 0;
-    transition: max-height 0.3s ease-out;
+    display: none;
   }
-}
-.header-nav.menu-open {
-  max-height: 700px;
-  transition: max-height 0.3s ease-in;
 }
 
 .menu-bar {
